@@ -1,0 +1,6 @@
+indexes:
+
+- kind: Comentario
+  properties:
+  - name: idlivro
+  - name: data

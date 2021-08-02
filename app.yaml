@@ -1,0 +1,24 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /js
+  static_dir: js
+- url: /css
+  static_dir: css
+- url: /sass
+  static_dir: sass
+- url: /images
+  static_dir: images
+- url: /fonts
+  static_dir: fonts
+- url: /templates
+  static_dir: templates
+
+- url: /.*
+  script: main_livrariaJS.app
+
+libraries:
+- name: MySQLdb
+  version: "latest"

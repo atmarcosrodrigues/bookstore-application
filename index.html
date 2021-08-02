@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="livrariaJS" ng-controller="loginController">
+   <head>
+      <meta charset="utf-8">
+      <title>Livraria JS &mdash; Aplicação para o cadastro de livros</title>
+      <link rel="shortcut icon" href="images/icon.png">
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+      <script src="js/scriptLivraria.js" charset="UTF-8"></script>
+      <script src="js/script.login.js" charset="UTF-8"></script>
+      <!-- Bootstrap  -->
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+      <!-- Style Livraria JS -->
+      <link rel="stylesheet" href="css/style-livraria-js.css">
+   </head>
+
+   <body ng-controller="livrariaJSController">
+      <div id="fh5co-page">
+         <nav id="inicio" class="fh5co-nav-style-1" role="navigation" data-offcanvass-position="fh5co-offcanvass-left">
+            <div class="container">
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 fh5co-logo">
+                  <a href="#" class="js-fh5co-mobile-toggle fh5co-nav-toggle"><i></i></a>
+                  <a href="#">Livraria JS</a>
+               </div>
+               <div class="col-lg-6 col-md-5 col-sm-5 text-center fh5co-link-wrap">
+                  <ul data-offcanvass="yes">
+                     <li class="active"><a href="" onclick="location.href='#inicio'">Início</a></li>
+                     <li><a href="" onclick="location.href='#cadastro'" ng-show="login.status">Cadastre um livro </a></li>
+                     <li><a href="" onclick="location.href='#buscar'">Buscar </a></li>
+                  </ul>
+               </div>
+               <div class="col-lg-3 col-md-4 col-sm-4 text-right fh5co-link-wrap">
+                  <ul class="fh5co-special" data-offcanvass="yes">
+                     <li><a href="" onclick="location.href='#sobre'">Sobre</a></li>
+                     <li><a href="" onclick="location.href='#login'" class="call-to-action" ng-show="!login.status">Login</a></li>
+                     <li><a href="" ng-click="sair()" class="call-to-action" ng-show="login.status">Sair</a></li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+         <div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(images/background.jpg);">
+            <div class="fh5co-overlay"></div>
+        	<div ng-include="template.boasvindas"></div>
+         </div>
+         <div ng-include="template.login"></div>
+         <div ng-include="template.cadastrolivro"></div>
+         <div id="books-view" class="fh5co-project-style-2" style="background-color: #FAFAFA;">
+            <div class="container">
+               <div ng-include="template.livros"></div>
+               <hr>
+               <div ng-include="template.comentarios"></div>
+            </div>
+            <div ng-include="template.busca"></div>
+         </div>
+         <div class="fh5co-blog-style-1" style="padding-bottom: 0px;">
+                     
+            <div ng-include="template.footer"></div>
+            <!-- END footer -->
+         </div>
+      </div>
+      <!-- END page-->
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+      <!-- Bootstrap -->
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <link rel="import" href="templates/load-style.html">
+   </body>
+</html>

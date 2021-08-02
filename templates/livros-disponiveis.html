@@ -1,0 +1,37 @@
+<div class="row p-b">
+					<div class="col-md-6 col-md-offset-3 text-center"  style="margin-left: 0px; width:100%">
+						<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Livros Disponíveis</h2>
+				
+		<div class="pricing">
+
+
+
+		<h2> <button style="float:left;" class="btn btn-success btn-outline" ng-click="previous()"> < </button> 
+
+		<button class="btn btn-success btn-outline" style="float:right; "ng-click="next()"> > </button></h2>
+
+
+		<img ng-src="{[{livroSelecionado.urlCapa}]}" alt="Capa"  height="340" width="250">
+
+		            <div class="pricing-item wow fadeInUp" style="float:right;width: 50%;" data-wow-duration="1s" data-wow-delay="1.1s">
+					 <p class="pricing-sentence"> Título: <input class="form-control" type="text" ng-model="livroSelecionado.titulo" ng-disabled="!exibeEdicao"></p>
+					 <p class="pricing-sentence"> Autores: <input class="form-control" type="text" ng-model="livroSelecionado.autores" ng-disabled="!exibeEdicao"></p>
+					 <p class="pricing-sentence"> Descrição: <textarea class="form-control" class="form-control" type="text" style="height:80px;" ng-model="livroSelecionado.desc" ng-disabled="!exibeEdicao"></textarea></p>
+					<p class="pricing-sentence"> Preço: R$ <input class="form-control"  type="text" ng-model="livroSelecionado.preco" aria-label="amount" ng-disabled="!exibeEdicao"></p>
+					<p class="pricing-sentence" ng-show="exibeEdicao"> Url da imagem da capa: <input class="form-control"  type="text" ng-model="livroSelecionado.urlCapa" ng-disabled="!exibeEdicao"></p>
+					<br>
+
+					<div ng-show="login.status">
+					<button class="btn btn-success btn-outline" ng-show="!exibeEdicao" ng-click="ativaEdicao()">Editar</button>
+					<button class="btn btn-success btn-outline" ng-show="!exibeEdicao" ng-click="removerLivro()">Remover</button>
+
+					<button class="btn btn-success btn-outline" ng-show="exibeEdicao" ng-click="salvaEdicao()" ng-disabled="!livroSelecionado.titulo || !livroSelecionado.autores || !livroSelecionado.desc || !livroSelecionado.preco">Salvar Alterações</button>
+					<button class="btn btn-success btn-outline" ng-show="exibeEdicao" ng-click="cancelaEdicao()">Cancelar</button>
+					</div>
+		             
+		             </div>
+
+
+					</div>
+				</div>
+			</div>

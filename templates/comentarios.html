@@ -1,0 +1,35 @@
+<div id="cadastro-livro" class="fh5co-testimonial-style-2">
+   <div class="container">
+      <div class="row p-b">
+         <div class="col-md-6 col-md-offset-3 text-center">
+            <h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Comentários</h2>
+            <p ng-show="!login.status" >Já leu esse livro ou tem algo a informar sobre ele? Faça login e deixe seu comentário. </p>
+            <div ng-show="login.status">
+               <p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s"> Já leu esse livro ou tem algo a informar sobre ele? Deixe seu comentário. 
+               <h3> {[{ login.nome}]}  {[{ login.sobrenome}]} </h3>
+               <textarea style="height:100px;"  class="form-control" type="text" placeholder="Comentário" style="height:40px;"  ng-model="comentario.conteudo"></textarea>
+               <button style="float:left;" class="btn btn-success btn-outline" ng-disabled=" !comentario.conteudo" ng-click="postarComentario(comentario)"  >Postar Comentário</button>
+               </p>
+            </div>
+         </div>
+      </div>
+      <div class="row">
+         <div class="col-md-4 col-sm-6 col-xs-12" ng-repeat="comentario in livroSelecionado.comentarios">
+            <div class="fh5co-testimonial-item wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
+               <div class="fh5co-name">
+                  <img src="images/person_5.jpg" alt="">
+                  <div class="fh5co-meta">
+                     <h3> {[{ comentario.usuario}]}</h3>
+                     <span class="fh5co-company"> {[{ comentario.data | date:'dd/MM/yyyy - HH:mm' }]}</span>
+                  </div>
+               </div>
+               <div class="fh5co-text">
+                  <p>&ldquo;{[{ comentario.conteudo}]}&rdquo;</p>
+               </div>
+            </div>
+            <div class="clearfix visible-lg-block visible-md-block"></div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>

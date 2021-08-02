@@ -1,0 +1,38 @@
+
+<div id="login" class="fh5co-pricing-style-2" ng-show="!login.status">
+				<div class="container">
+					<div class="row">
+						<div class="row p-b">
+							<div class="col-md-6 col-md-offset-3 text-center">
+								<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Login</h2>
+								<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">Faça login abaixo, ou cadastre-se caso não possua uma conta: </p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="pricing">
+			            <div class="pricing-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s"style="width: 100%;">
+			            <div style="width: 40%;">
+			            <p class="pricing-sentence"> Email: <input class="form-control" class="form-control" type="text" ng-model="login.email"></p>
+						<p class="pricing-sentence"> Senha <input class="form-control"  type="password" ng-model="login.senha" aria-label="amount"></p>
+
+						<button class="btn btn-success btn-outline" ng-click="logar()" ng-disabled="!login.email || !login.senha">Entrar</button>
+						</div>
+				
+				<div style="float:right;width: 50%;margin-top:-200px ">
+						 <p class="pricing-sentence">* Nome: <input class="form-control" type="text" ng-model="cadastro.nome"></p>
+						 <p class="pricing-sentence">* Sobrenome: <input class="form-control" type="text" ng-model="cadastro.sobrenome"></p>
+						 <p class="pricing-sentence">* Email: <input class="form-control" class="form-control" type="text" ng-model="cadastro.email"></p>
+						<p class="pricing-sentence">* Senha <input class="form-control"  type="password" ng-model="cadastro.senha" aria-label="amount"></p>
+						<p class="pricing-sentence">* Repetir Senha: <input class="form-control" type="password" ng-model="cadastro.confsenha"></p>
+						<br>
+						<button class="btn btn-success btn-outline" ng-click="cadastrar()" ng-disabled="!cadastro.nome || !cadastro.sobrenome ||  !cadastro.email || !cadastro.senha || !cadastro.confsenha">Cadastrar</button>
+					
+			             </div>
+
+			             </div>
+			    
+			         </div>
+			      </div>
+				</div>
+			</div>

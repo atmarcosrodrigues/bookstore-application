@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/icon.png">
+
+    <title>Livraria JS - REST API</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Page CSS -->
+    <link href="css/rest-style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#inicio"> Livraria JS - REST API</a>
+                </li>
+                <li>
+                    <a href="#getLivros">GET /getLivros</a>
+                </li>
+                <li>
+                    <a href="#getLivro">GET /getLivro</a>
+                </li>
+                <li>
+                    <a href="#inserirLivro">POST /inserirLivro</a>
+                </li>
+                <li>
+                    <a href="#updateLivro">PUT /updateLivro</a>
+                </li>
+                <li>
+                    <a href="#deletarLivro">DELETE /deletarLivro</a>
+                </li>
+                <li>
+                    <a href="#postarComentario">POST /postarComentario</a>
+                </li>
+                <li>
+                    <a href="#getComentarios">GET /getComentarios</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div id="inicio" class="row">
+                    <div class="col-lg-12">
+                        <h1><img src="images/icon.png" width="40px"> Livraria JS - REST API </h1>
+                        <hr>
+                        <br><h2>Introdução</h2>
+                        <p>Livraria JS - REST API é um free online REST service que descreve métodos de acesso para inclusão, atualização, remoção e manipulação dos recursos providos pela aplicação.</p>
+                        <!-- <code>#page-content-wrapper</code>.-->
+                        <a href="/" class="btn btn-default" id="menu-toggle">Ir para a aplicação</a>
+                    </div>
+                    
+                    <hr>
+                    <div id="getLivros" class="col-lg-12">
+                    <h2>GET getLivros  </h2>
+                    <h3> -Response: JSON</h3>
+                        <p> Recurso que retorna todos os livros cadastrados na apliação. Exemplo de request:</p>
+                         <pre><code class="javascript">  GET <a href="http://livraria-js.appspot.com/getLivros">http://livraria-js.appspot.com/getLivros</a> </code></pre>
+                        <p> Exemplo de resposta:</p>
+                         <pre><code class="javascript">[
+    {
+        "urlGetDetalhesLivro": "http://livraria-js.appspot.com/getLivro?id=va8XSjYW0adpSS6dLwaCxqlfD",
+        "urlCapa": "http://i430.photobucket.com/albums/qq29/unifei-itabira-bilbioteca/InteligenciaArtificialStuartRussell.jpg",
+        "preco": "219,90",
+        "urlGetCometarios": "http://livraria-js.appspot.com/getComentarios?idlivro=va8XSjYW0adpSS6dLwaCxqlfD",
+        "titulo": "Livro - Inteligencia Artificial",
+        "autores": "Russell, Norvig",
+        "data": "07/04/16 - 01:28",
+        "id": "va8XSjYW0adpSS6dLwaCxqlfD",
+        "desc": "A primeira edição de Inteligência artificial: uma abordagem moderna se tornou um clássico na literatura sobre IA. O livro foi adotado por mais de 600 universidades de 60 países e foi elogiado como a síntese definitiva desse campo. Nesta segunda edição, todos os capítulos foram extensivamente reescritos. Foi introduzida uma quantidade significativa de material novo, abrangendo áreas como: satisfação de restrições, inferência proposicional rápida, grafos de planejamento, agentes de inter-redes, inferência probabilística exata, técnicas de Markov Chain Monte Carlo, filtros de Kalman, métodos de aprendizado harmonioso, aprendizado estatístico, modelos probabilísticos de linguagens naturais, robótica probabilística e aspectos éticos da IA."
+    },
+    {
+        "urlGetDetalhesLivro": "http://livraria-js.appspot.com/getLivro?id=XOHZCuKDUCZXdAtg1OFFpXv98",
+        "urlCapa": "http://3.bp.blogspot.com/-umADLKwLxNA/VfW-9wmpaKI/AAAAAAAABbU/roqu_6SukSQ/s1600/download.jpg",
+        "preco": "34,90",
+        "urlGetCometarios": "http://livraria-js.appspot.com/getComentarios?idlivro=XOHZCuKDUCZXdAtg1OFFpXv98",
+        "titulo": "O Silmarillion",
+        "autores": "J. R. R. Tolkien",
+        "data": "07/04/16 - 01:28",
+        "id": "XOHZCuKDUCZXdAtg1OFFpXv98",
+        "desc": "O Silmarillion, relata acontecimentos de uma época muito anterior ao final da Terceira Era, quando ocorreram os grandes eventos narrados em O Senhor dos Anéis. São lendas derivadas de um passado remoto, ligadas às Silmarils, três gemas perfeitas criadas por Fëanor, o mais talentoso dos elfos. Tolkien trabalhou nesses textos ao longo de toda a sua vida, tornando-os veículo e registro de suas reflexões mais profundas."
+    }
+]
+                        </code></pre>
+                    </div>
+<hr>
+                    <div id="getLivro" class="col-lg-12">
+                    <h2>GET getLivro  </h2>
+                    <h3> -Response: JSON</h3>
+                        <p> Recurso que retorna os atributos de um livro cadastrado na apliação. Exemplo de request:</p>
+                         <pre><code class="javascript">  GET <a href="http://livraria-js.appspot.com/getLivro?id=va8XSjYW0adpSS6dLwaCxqlfD">http://livraria-js.appspot.com/getLivro?id=va8XSjYW0adpSS6dLwaCxqlfD</a>
+
+  Parâmetros:
+    -id: Identificador de algum já livro cadastrado </code></pre>
+                        <p> Exemplo de resposta:</p>
+                         <pre><code class="javascript">[
+    {
+        "exampleUpdateLivro": "-X PUT -d 'id=va8XSjYW0adpSS6dLwaCxqlfD&titulo=Livro - Inteligencia Artificial&desc=A primeira edição de Inteligência artificial: uma abordagem moderna se tornou um clássico na literatura sobre IA. O livro foi adotado por mais de 600 universidades de 60 países e foi elogiado como a síntese definitiva desse campo. Nesta segunda edição, todos os capítulos foram extensivamente reescritos. Foi introduzida uma quantidade significativa de material novo, abrangendo áreas como: satisfação de restrições, inferência proposicional rápida, grafos de planejamento, agentes de inter-redes, inferência probabilística exata, técnicas de Markov Chain Monte Carlo, filtros de Kalman, métodos de aprendizado harmonioso, aprendizado estatístico, modelos probabilísticos de linguagens naturais, robótica probabilística e aspectos éticos da IA.&autores=Russell, Norvig&preco=219,90&urlCapa=http://i430.photobucket.com/albums/qq29/unifei-itabira-bilbioteca/InteligenciaArtificialStuartRussell.jpg' http://livraria-js.appspot.com/updateLivro",
+        "urlCapa": "http://i430.photobucket.com/albums/qq29/unifei-itabira-bilbioteca/InteligenciaArtificialStuartRussell.jpg",
+        "examplePostComentario": "-X POST -d 'idlivro=va8XSjYW0adpSS6dLwaCxqlfD&usuario=user1&conteudo=Texto exemplo' http://livraria-js.appspot.com/postarComentario",
+        "preco": "219,90",
+        "urlGetCometarios": "http://livraria-js.appspot.com/getComentarios?idlivro=va8XSjYW0adpSS6dLwaCxqlfD",
+        "titulo": "Livro - Inteligencia Artificial",
+        "autores": "Russell, Norvig",
+        "exampleDeletaLivro": "-X DELETE http://livraria-js.appspot.com/deletarLivro?id=va8XSjYW0adpSS6dLwaCxqlfD",
+        "data": "07/04/16 - 16:11",
+        "id": "va8XSjYW0adpSS6dLwaCxqlfD",
+        "desc": "A primeira edição de Inteligência artificial: uma abordagem moderna se tornou um clássico na literatura sobre IA. O livro foi adotado por mais de 600 universidades de 60 países e foi elogiado como a síntese definitiva desse campo. Nesta segunda edição, todos os capítulos foram extensivamente reescritos. Foi introduzida uma quantidade significativa de material novo, abrangendo áreas como: satisfação de restrições, inferência proposicional rápida, grafos de planejamento, agentes de inter-redes, inferência probabilística exata, técnicas de Markov Chain Monte Carlo, filtros de Kalman, métodos de aprendizado harmonioso, aprendizado estatístico, modelos probabilísticos de linguagens naturais, robótica probabilística e aspectos éticos da IA."
+    }
+]
+                        </code></pre>
+                    </div>
+                    <hr>
+                    <div id="inserirLivro" class="col-lg-12">
+                    <h2>POST inserirLivro  </h2>
+                    <h3> -Response: Text</h3> 
+                        <p> Verbo usado para inserir um novo livro no sistema. Exemplo de request:</p>
+                         <pre><code class="javascript">  -X POST -d '<b>titulo=</b>ANGULARJS 2&<b>desc=</b>AngularJS: Novice to Ninja is your fast track route to mastering AngularJS, the superheroic JavaScript framework. AngularJS provides the fastest, most efficient way to build single page web applications.&<b>autores=</b>Russell, Norvig&<b>preco=</b>219,90&<b>urlCapa=</b>http://ecx.images-amazon.com/images/I/410Yirblc6L._SX387_BO1,204,203,200_.jpg' http://livraria-js.appspot.com/inserirLivro
+                         
+  Parâmetros:
+    -titulo: Titulo do livro a ser cadastrado
+    -desc: Descrição do livro a ser cadastrado
+    -preco: Preço do livro a ser livro cadastrado
+    -urlCapa: Endereço url para a imagem de capa do livro a ser cadastrado </code></pre>
+                        <p> Exemplo de resposta: (Simples menssagem de confirmação)</p>
+                         <pre><code class="javascript">  ok</code></pre>
+                    </div>
+
+                    <hr>
+                    <div id="updateLivro" class="col-lg-12">
+                    <h2>PUT updateLivro  </h2>
+                    <h3> -Response: Text</h3>
+                        <p> Verbo usado para atualizar informações de um livro já existente no sistema. Exemplo de request:</p>
+                         <pre><code class="javascript">  -X PUT -d 'id=XOHZCuKDUCZXdAtg1OFFpXv98&titulo=O Silmarillion UPDATE&desc=O Silmarillion, relata acontecimentos de uma época muito anterior ao final da Terceira Era, quando ocorreram os grandes eventos narrados em O Senhor dos Anéis. São lendas derivadas de um passado remoto, ligadas às Silmarils, três gemas perfeitas criadas por Fëanor, o mais talentoso dos elfos. Tolkien trabalhou nesses textos ao longo de toda a sua vida, tornando-os veículo e registro de suas reflexões mais profundas.&autores=J. R. R. Tolkien&preco=34,90&urlCapa=http://3.bp.blogspot.com/-umADLKwLxNA/VfW-9wmpaKI/AAAAAAAABbU/roqu_6SukSQ/s1600/download.jpg' http://livraria-js.appspot.com/updateLivro
+
+  Parâmetros:
+    -id: Identificador de algum já livro cadastrado
+    -titulo: Novo titulo para o livro cadastrado
+    -desc: Nova descrição para o livro cadastrado
+    -preco: Novo preço para o livro cadastrado
+    -urlCapa: Novo endereço url para a imagem de capa do livro cadastrado </code></pre>
+                        <p> Exemplo de resposta:</p>
+                         <pre><code class="javascript">  ok</code></pre>
+                    </div>
+
+                    <hr>
+                    <div id="deletarLivro" class="col-lg-12">
+                    <h2>DELETE deletarLivro  </h2>
+                    <h3> -Response: Text</h3>
+                        <p> Verbo usado para remover um livro existente no sistema. O request apaga todas as inforções do livro, incluindo comentários associados a ele. Exemplo de request:</p>
+                         <pre><code class="javascript">  -X DELETE http://livraria-js.appspot.com/deletarLivro?id=va8XSjYW0adpSS6dLwaCxqlfD
+                         
+  Parâmetros:
+    -idlivro: Identificador de algum livro cadastrado </code></pre>
+                        <p> Exemplo de resposta:</p>
+                         <pre><code class="javascript">  ok</code></pre>
+                    </div>
+
+
+                    <hr>
+                    <div id="postarComentario" class="col-lg-12">
+                    <h2>POST postarComentario  </h2>
+                    <h3> -Response: Text</h3>
+                        <p> Verbo usado para inserir um novo comentario no sistema. Exemplo de request:</p>
+                         <pre><code class="javascript">  -X POST -d '<b>idlivro=</b>va8XSjYW0adpSS6dLwaCxqlfD<b>&usuario=</b>Gloria Pires&<b>conteudo=</b>Não sou capaz de opinar!' http://livraria-js.appspot.com/postarComentario
+
+  Parâmetros:
+    -idlivro: Identificador de algum livro cadastrado 
+    -usuario: Nome do usuário que vai postar o comentario 
+    -conteudo: Conteúdo do comentário </code></pre>
+                         </code></pre>
+                        <p> Exemplo de resposta:</p>
+                         <pre><code class="javascript">  ok</code></pre>
+                    </div>
+
+
+                    <hr>
+                    <div id="getComentarios" class="col-lg-12">
+                    <h2>GET getComentarios  </h2>
+                    <h3> -Response: JSON</h3>
+                        <p> Retorna como recurso os comentarios correspondente a um usuário específico, ou todos os comentários inseridos, caso não seja informado nenhum idlivro no request. Exemplos de request:</p>
+                         <pre><code class="javascript">  GET <a href="http://livraria-js.appspot.com/getComentarios?idlivro">http://livraria-js.appspot.com/getComentarios</a>
+  GET <a href="http://livraria-js.appspot.com/getComentarios?idlivro=va8XSjYW0adpSS6dLwaCxqlfD">http://livraria-js.appspot.com/getComentarios?<b>idlivro=</b>va8XSjYW0adpSS6dLwaCxqlfD</a>
+
+  Parâmetros:
+    -idlivro: Identificador de algum livro cadastrado (Opcional)</code></pre>
+                        <p> Exemplo de resposta:</p>
+                         <pre><code class="javascript">[
+    {
+    "urlGetLivro": "http://livraria-js.appspot.com/getLivro?id=va8XSjYW0adpSS6dLwaCxqlfD",
+    "idlivro": "va8XSjYW0adpSS6dLwaCxqlfD",
+    "usuario": "Gloria Pires",
+    "conteudo": "Não sou capaz de opinar...",
+    "data": "07/04/16 - 01:28",
+    "id": "ByTMOcl18pp86dq3OS8n8kkSh"
+    },
+    {
+    "urlGetLivro": "http://livraria-js.appspot.com/getLivro?id=va8XSjYW0adpSS6dLwaCxqlfD",
+    "idlivro": "va8XSjYW0adpSS6dLwaCxqlfD",
+    "usuario": "Antonio",
+    "conteudo": "Bom livro.",
+    "data": "07/04/16 - 01:28",
+    "id": "h1xdiA4X76Mm8tS2l6x32MmBN"
+    }
+]</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

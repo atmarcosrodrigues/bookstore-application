@@ -1,0 +1,32 @@
+
+<div id="cadastro" class="fh5co-pricing-style-2">
+				<div class="container">
+					<div class="row">
+						<div class="row p-b">
+							<div class="col-md-6 col-md-offset-3 text-center">
+								<h2 class="fh5co-heading wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Cadastre um livro</h2>
+								<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".7s">Preencha as informalçoes abaixo para inserir um novo livro. </p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="pricing">
+			            <div class="pricing-item wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s">
+						 <p class="pricing-sentence">* Título: <input class="form-control" type="text" ng-model="livro.titulo"></p>
+						 <p class="pricing-sentence">* Autores: <input class="form-control" type="text" ng-model="livro.autores"></p>
+						 <p class="pricing-sentence">* Descrição: <textarea class="form-control" class="form-control" type="text" style="height:80px;" ng-model="livro.desc"></textarea></p>
+						<p class="pricing-sentence">* Preço: R$ <input class="form-control"  type="number" ng-model="livro.preco" aria-label="amount"></p>
+						<p class="pricing-sentence"> Url da imagem da capa: <input class="form-control" type="text" ng-model="livro.urlCapa"><br>
+						<br>
+						<button class="btn btn-success btn-outline" ng-click="addLivro(livro)" ng-disabled="!livro.titulo || !livro.autores || !livro.desc || !livro.preco">Adicionar livro</button>
+						<button class="btn btn-success btn-outline" ng-click="desativaAddArea()">Cancelar</button>
+
+			             
+			             </div>
+			    
+			         </div>
+			      </div>
+				</div>
+			</div>
+
+

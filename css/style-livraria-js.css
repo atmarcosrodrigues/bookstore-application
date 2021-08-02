@@ -1,0 +1,25 @@
+<!--
+
+	/* FREE HTML5 TEMPLATE  - http://freehtml5.co/ */
+
+	/* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Monsterrat:400,700|Merriweather:400,300italic,700);
+
+	/* Animate.css */
+@import url(animate.css);
+	/* Icomoon Icon Fonts */
+@import url(icomoon.css);
+	/* Magnific Popup */
+@import url(magnific-popup.css);
+	/* Owl Carousel */
+@import url(owl.carousel.min.css);
+@import url(owl.theme.default.min.css);
+	/* Cards */
+@import url(cards.css);
+
+.col-md-4.col-sm-6.col-xs-6.col-xxs-12.ng-scope {
+    width: 300px;
+}
+
+-->
+
