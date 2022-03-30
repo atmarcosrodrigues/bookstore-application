@@ -1,4 +1,4 @@
-# BookStore Application
+# BookStore Application Web Server
 
 Web service application developed with AngularJS hosted in Google App Engine cloud structure.
 ### Used libraries, resources and plataforms:
